@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="box1"></div>
+
+    <script>
+
+        let s='', n=1;
+
+        while (n <= 11) {
+            if (n % 2 == 0) 
+                s += `
+        <img src="images/${n}.jpg" style="height: 250px; border: 7px solid green; padding: 5px" alt="">
+                `; 
+            else 
+            s += `
+        <img src="images/${n}.jpg" style="height: 250px; border: 7px solid blue; padding: 5px" alt="">
+                `;
+            
+        n++;
+
+        }
+
+        box1.innerHTML = s;
+        
+    </script>
+</body>
+</html>

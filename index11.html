@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    ul {
+        margin-top: 30px;
+        list-style: none;
+        display: flex;
+    }
+
+    a {
+        padding: 16px;
+        text-decoration: none;
+    }
+
+</style>
+
+
+   
+<body>
+
+    <h1>Создать меню</h1>
+
+    <form name="formMenu">
+
+    <p>Пункты меню: <input type="text" size="50" name="elemMenu" value="Главная, О компании, Новости"></p>
+
+    <p>Цвет текста: <input type="color" name="fColor" value="#ffffff"></p>
+    
+    <p>Цвет фона: <input type="color" name="bColor" value="#2E9AFE"></p>
+
+    <p>Цвет hover: <input type="color" name="hColor" value="#FF8000"></p>
+
+    <p><input type="button" name="but" value="Создать меню" onclick="menu()"></p>    
+
+    </form>
+
+    <style id="myStyle"></style>
+    <p id="myMenu"></p>
+    <div id="big"></div>
+
+    <!-- <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О компании</a></li>
+        <li><a href="#">Новости</a></li>
+    </ul> -->
+
+
+    <script>
+
+        function menu() {
+            elemMenu = formMenu.elemMenu.value;
+            fColor = formMenu.fColor.value;
+            bColor = formMenu.bColor.value;
+            hColor = formMenu.hColor.value;
+
+            arrMenu = elemMenu.split(', ');
+
+            s = '', s1 = '', myList = '';
+
+            for (i=0; i<arrMenu.length; i++) {
+
+                s += `
+            <li onclick="bigPic(${i+1})"><a href="#">${arrMenu[i]}</a></li>
+                `;
+            }
+
+            // console.log(s);
+            myList = `<ul>${s}</ul>`;
+            // console.log(myList);
+
+            s1 = `
+            a {
+                background: ${bColor};
+                color: ${fColor};
+            }
+
+            a:hover {  background: ${hColor} } 
+            `;
+
+            myStyle.innerHTML = s1;
+            myMenu.innerHTML = myList;
+            formMenu.but.value = 'Изменить меню';
+        }
+
+    function bigPic(p) {
+     big.innerHTML = `<img onclick="big.innerHTML =''" src="images/${p}.jpg">`;
+
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    tr:nth-child(odd) { background: coral }
+    tr:nth-child(even) { background: chocolate }
+    
+    td { padding: 3px; }
+    
+    a { color: white}
+    
+    /* a {color: white} */
+    
+    /* tr:nth-child(even) {background: chocolate;}
+    tr:nth-child(odd) {background: coral;} */
+    
+    
+        </style>
+
+<body>
+
+    <div id="tab1"></div>
+
+
+    <script>
+
+    let x = prompt('Сколько столбцов?');
+            let y = prompt('Сколько строк?');  
+
+            let tab = '<table><tbody>';
+            let n = 1;    
+        for (i=1; i<=y; i++) {
+        tab += "<tr>";
+            for (j=1; j<=x; j++) {
+                tab += `<td><img src="images/${n}.png" style="height: 50px; border: 7px solid green; padding: 5px" alt=""><a href="link${n}.html">Ячейка ${n}</a></td>`;
+                n++;
+            }
+        tab += "</tr>";    
+        }   
+        tab += "</tbody></table>";
+
+        tab1.innerHTML = tab;
+
+        
+    </script>
+</body>
+</html>
